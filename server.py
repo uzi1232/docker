@@ -50,6 +50,5 @@ class HttpHandler(BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     SERVER_PORT = 8080
-    server = HTTPServer(("localhost", SERVER_PORT), HttpHandler)
-    print("Starting server on http://localhost:8080")
+    server = HTTPServer(("0.0.0.0", 8080), HttpHandler)
     server.serve_forever()

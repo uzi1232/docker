@@ -1,0 +1,12 @@
+#Assignment 1
+
+Repository: https://github.com/uzi1232/docker/tree/main
+Image: &nbsp;uyahya/assignments:python_server (docker pull uyahya/assignments:python_server)&nbsp;
+Command: docker run -p 8080:8080 uyahya/assignments:python_server
+Comments: All my commands expect localhost:8080 as the endpoint&nbsp;
+
+#Assignment 2
+
+Repository: https://github.com/uzi1232/docker/tree/main
+Image: uyahya/assignments:server_test
+kubectl apply -f assignment02_kubernates\deployment.yaml

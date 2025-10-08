@@ -1,0 +1,4 @@
+Repository: https://github.com/uzi1232/docker/tree/main
+Comments: Can run entire Kubernates workflow from deployment.yaml file (including namespace):
+    kubectl apply -f assignment02_kubernates\deployment.yaml
+

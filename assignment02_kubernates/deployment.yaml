@@ -1,7 +1,15 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: uyahya
+
+---
+
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: assignment-02-env
+  namespace: uyahya
 data:
   envValue: "environmentSnake2"
   CONFIG_PATH: "/etc/config"
@@ -14,6 +22,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: assignment-02-config
+  namespace: uyahya
 data:
   configValue: "snake"
 
@@ -23,6 +32,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: assignment-02-secret
+  namespace: uyahya
 type: Opaque
 data:
   .secretValue: c2VjcmV0U25ha2U= 
@@ -33,6 +43,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: assignment-02
+  namespace: uyahya
 spec:
   replicas: 1
   selector:
@@ -67,6 +78,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: assignment-02-service
+  namespace: uyahya
 spec:
   type: NodePort
   selector:
@@ -75,4 +87,4 @@ spec:
     - protocol: TCP
       port: 8081
       targetPort: 8081
-      nodePort: 30001
+      nodePort: 30000
